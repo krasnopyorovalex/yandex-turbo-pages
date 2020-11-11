@@ -28,7 +28,7 @@ class YandexTurboPages extends TurboPages
         $renderDto->template = $this->getTemplate();
         $renderDto->meta = $this->getMetaDto();
         $renderDto->content = new Content(
-            array_reduce($this->turboPages, fn ($str, TurboPages $turboPage) => $str .= $turboPage->make(), '')
+            array_reduce($this->turboPages, fn ($str, TurboPages $turboPage) => $str . $turboPage->make(), '')
         );
 
         return $this->view->render($renderDto);
